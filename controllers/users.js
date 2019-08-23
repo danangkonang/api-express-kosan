@@ -22,9 +22,9 @@ exports.login = (req, res) => {
 }
 
 exports.register = (req, res) => {
-    const { user,email,password } = req.body    
+    const { email,password } = req.body    
 
-    connection.query(`INSERT INTO users (user,email,password) VALUES ('${user}', '${email}', '${password}')`, (err)=> {
+    connection.query(`INSERT INTO users (email,password) VALUES ('${email}', '${password}')`, (err)=> {
         if (err) throw err
     })    
 
